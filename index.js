@@ -175,18 +175,17 @@ async function starts() {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
-				case 'help':
-				case 'menu':
+				case 'bot':
 					client.sendMessage(from, help(prefix), text)
 					break
-				case 'wiki':
+				/*case 'wiki':
 					reply('Em desenvolvimento')
-					break
+					break*/
 				case 'times':
 				case 'time':
 					client.sendMessage(from, times(prefix), text)
 					break
-				case 'idiomas':
+				/*case 'idiomas':
 				case 'idioma':
 					client.sendMessage(from, idiomas(prefix), text)
 					break
@@ -260,13 +259,13 @@ async function starts() {
                      			}
                     			client.sendMessage('559885197842@s.whatsapp.net', options, text, {quoted: mek})
                     			reply('SUA SOLICITAÇÃO chegou ao proprietário do BOT, solicitações falsas / main2 não serão respondidas.')
-                    			break
+                    			break*/
 				case 'hino':
 					anu = `https://raw.githubusercontent.com/HiroshiJohn/HinosFutebol/main/musics/${args[0]}.mp3`
 					buffer = await getBuffer(anu)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', quoted: mek})
 					break
-				case 'nekonime':
+				/*case 'nekonime':
           				data = await fetchJson('https://waifu.pics/api/sfw/neko')
            				hasil = await getBuffer(data.url)
            				client.sendMessage(from, hasil, image, {quoted: mek})
@@ -352,7 +351,7 @@ async function starts() {
 					} else {
 						reply('Marque a foto')
 					}
-					break
+					break*/
 				case 'stiker':
 				case 'sticker':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -540,7 +539,7 @@ async function starts() {
 						reply(`Limite de 10 segundos.`)
 					}
 					break
-				case 'gtts':
+				/*case 'gtts':
 					if (args.length < 1) return client.sendMessage(from, 'Onde está o código do idioma?', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
 					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto?', text, {quoted: mek})
@@ -553,7 +552,7 @@ async function starts() {
 						client.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 						fs.unlinkSync(ranm)
 					})
-					break
+					break*/
 				/*case 'meme':
 					meme = await fetchJson('https//kagchi-api.glitch.me/meme/memes', { method: 'get' })
 					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
@@ -590,7 +589,7 @@ async function starts() {
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
 					reply(anu.result)
 					break*/
-				case 'ytmp3':
+				/*case 'ytmp3':
 					/*if (args.length < 1) return reply('Onde está o url?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp3?url=${args[0]}`, {method: 'get'})
@@ -599,7 +598,7 @@ async function starts() {
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})*/
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					if (args.length < 1) return reply('Onde está o url?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?url=${args[0]}&apikey=${apikeyzeks}`, {method: 'get'})
@@ -616,7 +615,7 @@ async function starts() {
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp4?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {quoted: mek})*/
+					client.sendMessage(from, buffer, video, {quoted: mek})
 					if (args.length < 1) return reply('Onde está o url?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4/2?url=${args[0]}&apikey=${apikeyzeks}`, {method: 'get'})
@@ -695,7 +694,7 @@ async function starts() {
 						client.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 						fs.unlinkSync(rano)
 					})
-					break
+					break*/
 				case 'tagall':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -732,7 +731,7 @@ async function starts() {
 					}
 					client.sendMessage(from, teks, text, {detectLinks: false, quoted: mek})
 					break
-				case 'clearall':
+				/*case 'clearall':
 					if (!isOwner) return reply('Só o dono do bot pode usar este comando. Quem é Você?')
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
@@ -829,7 +828,7 @@ async function starts() {
                                         } else {
                                             reply(mess.only.admin)
                                         }
-                                        break
+                                        break*/
 				case 'toimg':
 					if (!isQuotedSticker) return reply('❌ Marque o sticker ❌')
 					reply(mess.wait)
@@ -844,7 +843,7 @@ async function starts() {
 						fs.unlinkSync(ran)
 					})
 					break
-				case 'tovid':
+				/*case 'tovid':
 					if (!isQuotedSticker) return reply('❌ Marque o sticker ❌')
 					reply(mess.wait)
 					encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -942,7 +941,7 @@ async function starts() {
 					} else {
 						reply('Só uma foto mano')
 					}
-					break
+					break*/
 				default:
 					if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
