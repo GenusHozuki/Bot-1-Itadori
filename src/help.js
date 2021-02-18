@@ -24,6 +24,8 @@ const help = (prefix) => {
   FEITO POR *Gênus lindex☪️*️⃣*
   DUVIDAS? 👇
   WA.me/559888684143
+
+🌠“Não tenho certeza de nada, mas a visão das estrelas me faz sonhar.”🌠
 ╚════════════════════`
 }
 
