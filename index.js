@@ -185,11 +185,11 @@ async function starts() {
 				case 'time':
 					client.sendMessage(from, times(prefix), text)
 					break
-				/*case 'idiomas':
+				case 'idiomas':
 				case 'idioma':
 					client.sendMessage(from, idiomas(prefix), text)
 					break
-				case 'info':
+				/*case 'info':
 					me = client.user
 					uptime = process.uptime()
 					teks = `*Bot Nome* : ${me.name}\n*Bot Tag* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Contatos Bloqueados* : ${blocked.length}\n*O bot foi ativado em* : ${kyun(uptime)}`
@@ -539,7 +539,7 @@ async function starts() {
 						reply(`Limite de 10 segundos.`)
 					}
 					break
-				/*case 'gtts':
+				case 'gtts':
 					if (args.length < 1) return client.sendMessage(from, 'Onde está o código do idioma?', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
 					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto?', text, {quoted: mek})
@@ -552,7 +552,7 @@ async function starts() {
 						client.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 						fs.unlinkSync(ranm)
 					})
-					break*/
+					break
 				/*case 'meme':
 					meme = await fetchJson('https//kagchi-api.glitch.me/meme/memes', { method: 'get' })
 					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
@@ -888,7 +888,7 @@ async function starts() {
 					break
 				case 'simih':
 					reply('❌ COMANDO DESATIVADO PARA MANUTENÇÃO ❌')
-					break
+					break*/
 				case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -906,7 +906,7 @@ async function starts() {
 						reply('1 para ativar, 0 para desativar')
 					}
                                       break
-                                case 'say':
+                                /*case 'say':
 					if (args.length < 1) return reply('Onde está o texto?')
 					teks = body.slice(4)
                                         anu = teks
